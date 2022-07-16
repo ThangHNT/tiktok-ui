@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
-import headlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css'; // optional
 import Button from '~/components/Buttons';
 import {
@@ -14,10 +13,8 @@ import {
     faMagnifyingGlass,
     faSpinner,
     faSignIn,
-    faCloudUpload,
     faMessage,
     faCoins,
-    faSackDollar,
     faGear,
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
@@ -27,6 +24,8 @@ import AccountItem from '~/components/AccountItem';
 
 import Menu from '~/components/Popper/Menu';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -65,7 +64,7 @@ function Header() {
     }, []);
 
     const handleChange = (menuItem) => {
-        console.log(menuItem);
+        // console.log(menuItem);
     };
 
     const userMenu = [
@@ -200,7 +199,7 @@ function Header() {
                         <>
                             <Tippy delay={200} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                             <button className={cx('action-btn')}>
@@ -217,7 +216,7 @@ function Header() {
                     )}
                     <Menu items={userMenu ? userMenu : MENU_ITEMS} onChange={handleChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/23f7d50edcddd32d35f355c86c546712~c5_100x100.jpeg?x-expires=1658109600&x-signature=vqYRBpkxQdsouz53g4rDbkYvwB8%3D"
                                 alt="hnt"
