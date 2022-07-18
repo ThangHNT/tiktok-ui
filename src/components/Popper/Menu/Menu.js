@@ -50,6 +50,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                             <Header
                                 title={current.title}
                                 onBack={() => {
+                                    // quay về menu trc đó
                                     setHistory((pre) => pre.slice(0, pre.length - 1));
                                 }}
                             />
@@ -59,6 +60,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                 </div>
             )}
             onHide={() => {
+                // khi blur khỏi menu cấp 2 sẽ trở về menu cấp 1
                 setHistory((pre) => pre.slice(0, 1));
             }}
         >
