@@ -22,7 +22,7 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
-import routeConfig from '~/config/routes.js';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -86,7 +86,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <Link to={routeConfig.home} className={cx('logo-link')}>
+                    <Link to={config.routes.home} className={cx('logo-link')}>
                         <svg height="42" width="118" alt="TikTok">
                             <g clipPath="url(#clip0)">
                                 <path
