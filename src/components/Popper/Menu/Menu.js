@@ -17,8 +17,6 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
 
     const renderItems = () => {
         return current.data.map((item, index) => {
-            // eslint-disable-next-line
-            const isParent = !!item.children;
             return (
                 <MenuItem
                     key={index}
